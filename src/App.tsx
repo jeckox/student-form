@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import {makeServer} from './server';
 
-function App() {
+const App: React.FC= () => {
+  if (process.env.NODE_ENV === "development") {
+    makeServer()
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Router>
+        <nav>
+          <Link to='/add-student'> Add Student </Link>
+          <Link to='/students'> All the students </Link>
+        </nav>
+        <Switch>
+            <Route path="/student/:studentId">
+            <p>Student</p>
+            </Route>
+            <Route path="/students">
+            <p>students</p>
+            </Route>
+            <Route path="/add-student">
+            <p>add student</p>
+            </Route>
+            <Route>
+              <p>Inicio</p>
+            </Route>
+      </Switch>
+    </Router>
+    );
+};
 
 export default App;
