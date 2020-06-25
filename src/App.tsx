@@ -6,6 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import {makeServer} from './server';
+import {StudentsTable} from './components/StudentsTable/StudentsTable';
 
 const App: React.FC= () => {
   if (process.env.NODE_ENV === "development") {
@@ -22,7 +23,7 @@ const App: React.FC= () => {
             <p>Student</p>
             </Route>
             <Route path="/students">
-            <p>students</p>
+              <StudentsTable />
             </Route>
             <Route path="/add-student">
             <p>add student</p>
@@ -32,7 +33,7 @@ const App: React.FC= () => {
             </Route>
       </Switch>
     </Router>
-    );
+  );
 };
 
 export default App;
