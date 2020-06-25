@@ -1,0 +1,27 @@
+.student__detail {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.student__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border: 1px solid #f4f4f4;
+     :first-child {
+        font-weight: bold;
+    }
+    &:hover {
+        background: #f4f4f4;
+    }
+}
+
+.student__image {
+    img {
+        width: 150px;
+    }
+}

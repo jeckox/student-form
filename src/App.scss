@@ -1,0 +1,60 @@
+.section__layout {
+    background: white;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5em 1em;
+}
+
+h2 {
+    color: #555;
+    text-align: center;
+}
+
+nav {
+    background: white;
+    width: 90%;
+    margin: 0 auto 1em auto;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: center;
+    a {
+        display: inline-block;
+        margin: 0 1em;
+        text-decoration: none;
+        font-weight: bold;
+        color: #555;
+        padding: 1em;
+        &:hover,
+        &.active {
+            background: #f4f4f4;
+            color: #4867ca;
+        }
+    }
+}
+
+button {
+    display: inline-block;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #555;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    a {
+        text-decoration: none;
+        &:visited {
+            color: #555;
+        }
+        &:hover {
+            color: #f4f4f4;
+        }
+    }
+    &:hover {
+        background: #4867ca;
+        color: #f4f4f4;
+        a {
+            color: #f4f4f4;
+        }
+    }
+}
