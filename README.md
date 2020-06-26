@@ -1,3 +1,23 @@
+## Honeywell Coding Challenge
+
+This project cover the following points:
+* React 16 (or above)
+* State management (Preference is Mobx . If not use Redux)
+* Routing
+* Typescript &amp; SASS
+* Mock the data wherever needed. Do not build any backend services.
+### Quick Notes
+Typescript is very helpful detecting errors and code standardization.
+Using Redux and thunk for state management.
+React router dom manage the routing.
+Miragejs is the library that manage all the mocking info.
+
+
+
+
+
+-----------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
