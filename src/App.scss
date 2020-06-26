@@ -57,4 +57,11 @@ button {
             color: #f4f4f4;
         }
     }
+    &.inverted {
+        background: #4867ca;
+        color: #f4f4f4;
+        &:hover {
+            background-color: #627bcc;
+        }
+    }
 }

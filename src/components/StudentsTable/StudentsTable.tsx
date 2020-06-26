@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Student, fetchStudents } from '../../actions';
+import { Student, fetchStudents, deleteStudent } from '../../actions';
 import {StoreState} from '../../reducers';
 import { useHistory } from "react-router-dom";
 import './StudentsTable.scss';
@@ -8,13 +8,12 @@ import './StudentsTable.scss';
 interface StudentsTableProps {
   students: Student[];
   fetchStudents(): any;
+  deleteStudent(id: string): any;
 }
 
 const _StudentsTable: React.FC<StudentsTableProps> = props => {
   useEffect(() => {
-    if(!props.students.length){
-      props.fetchStudents();
-    }
+    props.fetchStudents();
   }, []);
   const history = useHistory();
   const handlerDetail = (stdId): void =>{
@@ -42,7 +41,7 @@ const _StudentsTable: React.FC<StudentsTableProps> = props => {
                         <td>{element.lastName}</td>
                         <td>{element.phone}</td>
                         <td>{element.gpa}</td>
-                      <td><button>Delete</button></td>
+                      <td><button onClick={(e): void => {e.stopPropagation(); props.deleteStudent(element.id)}}>Delete</button></td>
                     </tr>
                   )
                 })}
@@ -61,5 +60,5 @@ const mapStateToProps = ({students}: StoreState): {students: Student[]} => {
 
 export const StudentsTable = connect(
   mapStateToProps,
-  { fetchStudents }
+  { fetchStudents, deleteStudent }
 )(_StudentsTable)

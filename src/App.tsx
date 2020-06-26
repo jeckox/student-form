@@ -8,6 +8,7 @@ import {
 import {makeServer} from './server';
 import {StudentsTable} from './components/StudentsTable/StudentsTable';
 import {StudentDetail} from './components/StudentDetail/StudentDetail';
+import {AddStudent} from './components/AddStudent/AddStudent';
 import './App.scss';
 
 const App: React.FC= () => {
@@ -29,7 +30,7 @@ const App: React.FC= () => {
                 <StudentsTable />
               </Route>
               <Route>
-                <p>add student</p>
+                <AddStudent/>
               </Route>
           </Switch>
         </main>

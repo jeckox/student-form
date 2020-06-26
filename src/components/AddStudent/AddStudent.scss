@@ -1,0 +1,18 @@
+.form__student {
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.form__field {
+    margin: 1em 0;
+    label {
+        display: block;
+        text-align: left;
+    }
+    input {
+        padding: 1em;
+        border: solid 1px #E6ECF1;
+        width: 100%;
+    }
+}
